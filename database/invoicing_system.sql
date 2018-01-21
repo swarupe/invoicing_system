@@ -5,7 +5,7 @@ CREATE DATABASE invoicing_system;
 USE invoicing_system;
 
 CREATE TABLE user (User_Id int AUTO_INCREMENT PRIMARY KEY, Name char(20),Username varchar(20), Password varchar(20), Role varchar(20))AUTO_INCREMENT = 1000000;
-
+INSERT INTO `user`(`Name`,`Username`,`Password`,`Role`) VALUES ('Swaroop','swaroop','swaroop','Admin');
 
 CREATE TABLE tax (Tax_Id int AUTO_INCREMENT PRIMARY KEY, CGST decimal,SGST decimal,IGST decimal, User_Id int, foreign key(User_Id) references user(User_Id))AUTO_INCREMENT = 10000;
 
