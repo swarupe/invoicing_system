@@ -10,7 +10,7 @@ INSERT INTO `user`(`Name`,`Username`,`Password`,`Role`) VALUES ('Swaroop','swaro
 CREATE TABLE tax (Tax_Id int AUTO_INCREMENT PRIMARY KEY, CGST decimal,SGST decimal,IGST decimal, User_Id int, foreign key(User_Id) references user(User_Id))AUTO_INCREMENT = 10000;
 
 
-CREATE TABLE customer (Customer_Id int AUTO_INCREMENT PRIMARY KEY,GSTIN int(16) UNIQUE NOT NULL, Name char(20), Contact_Phone int(12), Contact_email varchar(25), Address char(30), City char(20), PIN int, User_Id int, foreign key(User_Id) references user(User_Id))AUTO_INCREMENT = 1000;
+CREATE TABLE customer (Customer_Id int AUTO_INCREMENT PRIMARY KEY,GSTIN int(16) UNIQUE NOT NULL, Name char(20), Contact_Phone varchar(11), Contact_email varchar(25), Address char(30), City char(20), PIN int, User_Id int, foreign key(User_Id) references user(User_Id))AUTO_INCREMENT = 1000;
 
 
 CREATE TABLE product (Product_Id int AUTO_INCREMENT PRIMARY KEY, Name char(20), Version char(10), Type char(15), Price decimal, User_Id int, foreign key(User_Id) references user(User_Id)) AUTO_INCREMENT=100;
