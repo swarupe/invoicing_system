@@ -24,7 +24,6 @@ include("php/session.php");
       height: 60px;
     }
     .navbar-brand {
-
       padding-top: 0;
       padding-bottom: 0;
       line-height: 60px;

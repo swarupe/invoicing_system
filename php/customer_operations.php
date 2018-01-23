@@ -1,16 +1,15 @@
 <?php
 include_once 'connect.php';
 session_start();
+$gstin=$_POST['gstin'];
+$c_name=$_POST['customer_name'];
+$c_ph=$_POST['customer_ph_no'];
+$c_email=$_POST['customer_email'];
+$c_address=$_POST['customer_address'];
+$c_city=$_POST['customer_city'];
+$c_pin=$_POST['customer_pincode'];
+$user_id=$_SESSION['user_id'];
 if (isset($_POST['add'])) {
-	$gstin=$_POST['gstin'];
-	$c_name=$_POST['customer_name'];
-	$c_ph=$_POST['customer_ph_no'];
-	$c_email=$_POST['customer_email'];
-	$c_address=$_POST['customer_address'];
-	$c_city=$_POST['customer_city'];
-	$c_pin=$_POST['customer_pincode'];
-	$user_id=$_SESSION['user_id'];
-
 	$_SESSION['get_gstin'] = $gstin;
 	$_SESSION['get_c_name'] = $c_name;
 	$_SESSION['get_c_ph'] = $c_ph;
@@ -35,15 +34,6 @@ if (isset($_POST['add'])) {
 }
 
 if (isset($_POST['modify'])) {
-	$gstin=$_POST['gstin'];
-	$c_name=$_POST['customer_name'];
-	$c_ph=$_POST['customer_ph_no'];
-	$c_email=$_POST['customer_email'];
-	$c_address=$_POST['customer_address'];
-	$c_city=$_POST['customer_city'];
-	$c_pin=$_POST['customer_pincode'];
-	$user_id=$_SESSION['user_id'];
-
 	$_SESSION['get_gstin'] = $gstin;
 	$_SESSION['get_c_name'] = $c_name;
 	$_SESSION['get_c_ph'] = $c_ph;
@@ -69,14 +59,6 @@ if (isset($_POST['modify'])) {
 
 
 if (isset($_POST['delete'])) {
-	$gstin=$_POST['gstin'];
-	$c_name=$_POST['customer_name'];
-	$c_ph=$_POST['customer_ph_no'];
-	$c_email=$_POST['customer_email'];
-	$c_address=$_POST['customer_address'];
-	$c_city=$_POST['customer_city'];
-	$c_pin=$_POST['customer_pincode'];
-	$user_id=$_SESSION['user_id'];
 	$sql = "DELETE FROM `customer` WHERE GSTIN = '$gstin'";
 	$connection=openCon();
 	$query = mysqli_query($connection,$sql);

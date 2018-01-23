@@ -37,8 +37,9 @@ include("php/session.php");
     }
 
     .demo-container{
-      width: 310px;
-      margin-top: 15%;
+      width: 350px;
+      border-style: ridge;
+      margin-top: 10%;
       margin-left: 37%;
       align-items: center;
     }
@@ -92,34 +93,36 @@ include("php/session.php");
       <a class="nav-link" style="color: black;" href="reports.php">Reports</a>
     </li>
   </ul>
-  <div class="demo-container">
-    <form action="php/update_tax.php" method="POST">
+  
+  <form action="php/update_tax.php" method="POST">
+    <div class="demo-container">
       <div class="form-inline">
-        <label for = "name" style="margin-right: 5px;">CGST :</label>
+        <label for = "name" style="margin-left: 20px; margin-top:8px;  margin-right: 5px;">CGST :</label>
         <div class = "form-group">
-          <input style="margin-bottom: 10px;" placeholder = "CGST" name = "cgst" type = "number" class = "form-control" min="0" max="100" value="<?php if ($rows >=0) { echo $row['CGST']; }?>" />
+          <input style="margin-top: 20px; margin-bottom: 10px;" placeholder = "CGST" name = "cgst" type = "number" class = "form-control" min="0" max="100" value="<?php if ($rows >=0) { echo $row['CGST']; }?>" />
         </div>
-        <label>%</label>
+        <label style="margin-left: 3px; margin-top: 8px;">%</label>
       </div>
       <div class="form-inline">
-        <label for = "name" style="margin-right: 6px;">SGST :</label>
+        <label for = "name" style="margin-left: 20px; margin-bottom:12px; margin-right: 6px;">SGST :</label>
         <div class = "form-group">
           <input style="margin-bottom: 10px;" placeholder = "SGST" name = "sgst" type = "number" class = "form-control" min="0" max="100"  value="<?php if ($rows >=0) { echo $row['SGST']; }?>" />
         </div>
-        <label>%</label>
+        <label style="margin-left: 3px; margin-bottom: 10px;">%</label>
       </div>
       <div class="form-inline">
-        <label for = "name" style="margin-right: 7px; margin-left: 6px;">IGST :</label>
+        <label for = "name" style="margin-bottom:22px; margin-right: 7px; margin-left: 26px;">IGST :</label>
         <div class = "form-group">
           <input style="margin-bottom: 20px;" placeholder = "IGST" name = "igst" type = "number" class = "form-control" min="0" max="100"  value="<?php if ($rows >=0) { echo $row['IGST']; }?>" />
         </div>
-        <label>%</label>
+        <label style="margin-left: 3px; margin-bottom: 20px;">%</label>
       </div>
-      <div class="form-group">
-        <input class="btn" style="float: right; margin-right: 20px; margin-top: 5px; background-color: green;" type="submit" name="update" value="UPDATE">
-      </div>
-    </form>
-  </div>
+    </div>
+    <div class="form-group">
+      <input class="btn" style="margin-left: 55%; margin-top: 10px; background-color: green;" type="submit" name="update" value="UPDATE">
+    </div>
+  </form>
+  
 
 </body>
 </html>

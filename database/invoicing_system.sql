@@ -19,5 +19,5 @@ CREATE TABLE product (Product_Id int AUTO_INCREMENT PRIMARY KEY, Name char(20), 
 CREATE TABLE invoice (Invoice_Id int AUTO_INCREMENT PRIMARY KEY, Invoice_No int UNIQUE NOT NULL, Invoice_Date varchar(10), Invoice_To int, foreign key(Invoice_To) references customer(Customer_Id))AUTO_INCREMENT = 1;
 
 
-CREATE TABLE invoice_items (Invoice_Item_Id int AUTO_INCREMENT PRIMARY KEY, Product_Id int, Description char(30), Quantity int, Subtotal decimal, Tax_Id int, Total_Amount decimal, Invoice_Id int, foreign key(Product_Id) references product(Product_Id), foreign key(Tax_Id) references tax(Tax_Id), foreign key(Invoice_Id) references invoice(Invoice_Id))AUTO_INCREMENT = 10;
+CREATE TABLE invoice_items (Invoice_Item_Id int AUTO_INCREMENT PRIMARY KEY, Product_Id int, Description char(30), Quantity int, Subtotal decimal, CGST_Price decimal, SGST_Price decimal, IGST_Price decimal, Total_Amount decimal, Invoice_Id int, foreign key(Product_Id) references product(Product_Id), foreign key(Invoice_Id) references invoice(Invoice_Id))AUTO_INCREMENT = 10;
 

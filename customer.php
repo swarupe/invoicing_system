@@ -118,43 +118,43 @@ include("php/session.php");
     <form action="php/customer_operations.php" method="POST">
       <div class="demo-container">
         <div class="form-inline">
-          <label style="margin-left: 17px; margin-right: 5px;">GSTIN :</label>
+          <label style="margin-top: 5px; margin-left: 17px; margin-right: 5px;">GSTIN :</label>
           <div class = "form-group">
             <input style="margin-top: 17px; margin-bottom: 10px; width: 350px;" placeholder = "Enter GSTIN" name = "gstin" type="numbr" class = "auto form-control" onchange="showCustomerDetails(this.value)" value="<?php if (isset($_SESSION['get_gstin'])) { echo $_SESSION['get_gstin'];  unset($_SESSION['get_gstin']); } ?>" />
           </div>
         </div>
         <div class="form-inline">
-          <label for = "name" style="margin-left: 17px; margin-right: 5px;">Customer Name :</label>
+          <label for = "name" style="margin-bottom: 12px; margin-left: 17px; margin-right: 5px;">Customer Name :</label>
           <div class = "form-group">
             <input style="margin-bottom: 10px; width: 283px;" placeholder = "Customer Name" name = "customer_name" class = "form-control" value="<?php if (isset($_SESSION['get_c_name'])) { echo $_SESSION['get_c_name']; unset($_SESSION['get_c_name']);}?>" />
           </div>
         </div>
         <div class="form-inline">
-          <label for = "name" style="margin-left: 17px; margin-right: 5px;">Phone Number :</label>
+          <label for = "name" style="margin-bottom: 13px; margin-left: 17px; margin-right: 5px;">Phone Number :</label>
           <div class = "form-group">
             <input style="margin-bottom: 10px; width: 291px;" placeholder = "Customer Phone Number" name = "customer_ph_no" class = "form-control" value="<?php if (isset($_SESSION['get_c_ph'])) { echo $_SESSION['get_c_ph']; unset($_SESSION['get_c_ph']);}?>" />
           </div>
         </div>
         <div class="form-inline">
-          <label for = "name" style="margin-left: 17px; margin-right: 5px;">Email :</label>
+          <label for = "name" style="margin-bottom: 12px; margin-left: 17px; margin-right: 5px;">Email :</label>
           <div class = "form-group">
             <input style="margin-bottom: 10px; width: 358px;" placeholder = "Customer Email ID" name = "customer_email" type="email" class = "form-control" value="<?php if (isset($_SESSION['get_c_email'])) { echo $_SESSION['get_c_email']; unset($_SESSION['get_c_email']);}?>"/>
           </div>
         </div>
         <div class="form-inline">
-          <label for = "name" style="margin-left: 17px; margin-right: 5px;">Address :</label>
+          <label for = "name" style="margin-bottom: 50px; margin-left: 17px; margin-right: 5px;">Address :</label>
           <div class = "form-group">
             <textarea style="margin-bottom:10px; width: 340px;" placeholder = "Address" name = "customer_address" class = "form-control"><?php if (isset($_SESSION['get_c_addr'])) { echo $_SESSION['get_c_addr']; unset($_SESSION['get_c_addr']); }?></textarea>
           </div>
         </div>
         <div class="form-inline">
-          <label for = "name" style="margin-left: 17px; margin-right: 5px;">City :</label>
+          <label for = "name" style="margin-bottom: 10px; margin-left: 17px; margin-right: 5px;">City :</label>
           <div class = "form-group">
             <input style="margin-bottom: 10px; width: 371px;" placeholder = "City" name = "customer_city" class = "form-control" value="<?php if (isset($_SESSION['get_c_city'])) { echo $_SESSION['get_c_city']; unset($_SESSION['get_c_city']);}?>"/>
           </div>
         </div>
         <div class="form-inline">
-          <label for = "name" style="margin-left: 17px; margin-right: 5px;">PIN :</label>
+          <label for = "name" style="margin-bottom: 18px; margin-left: 17px; margin-right: 5px;">PIN :</label>
           <div class = "form-group">
             <input style="margin-bottom: 18px; width: 372px;" placeholder = "Pincode" name = "customer_pincode" class = "form-control" value="<?php if (isset($_SESSION['get_c_pin'])) { echo $_SESSION['get_c_pin']; unset($_SESSION['get_c_pin']);}?>"/>
           </div>
@@ -209,15 +209,13 @@ include("php/session.php");
 
     <script type="text/javascript">
       $(function() {
+        $(".auto").autocomplete({
+          source: "php/gstin_list.php",
+          minLength: 1
+        });                
 
-    //autocomplete
-    $(".auto").autocomplete({
-      source: "php/gstin_list.php",
-      minLength: 1
-    });                
+      });
+    </script>
 
-  });
-</script>
-
-</body>
-</html>
+  </body>
+  </html>
