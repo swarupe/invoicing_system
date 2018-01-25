@@ -10,7 +10,12 @@ if (isset($_GET['q'])){
 	$_SESSION['get_p_version'] = $row['Version'];
 	$_SESSION['get_p_type'] = $row['Type'];
 	$_SESSION['get_p_price'] = $row['Price'];
+	if (isset($_GET['other'])) {
+		echo 'Version: '.$row['Version'].' Type: '.$row['Type'];
+	}
+	elseif (isset($_GET['price'])) {
+		echo $row['Price'];
+	}
 }
-
 
 ?>

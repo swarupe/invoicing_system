@@ -192,7 +192,6 @@ include("php/session.php");
 				source: "php/products_list.php",
 				minLength: 1
 			});                
-
 		});
 	</script>
 </body>
