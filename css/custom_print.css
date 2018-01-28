@@ -1,0 +1,23 @@
+
+table {
+  border-collapse: collapse;
+  margin-left: 2%;
+  width: 96%;
+}
+th {
+  height: 50px;
+  text-align: center;
+}
+td {
+  text-align: center;
+}
+table, th, td {
+  border: 1px solid black;
+}
+
+td input {
+  border: none;
+  background: transparent;
+  color: black;
+  text-align: center;
+}

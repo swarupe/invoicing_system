@@ -16,8 +16,8 @@ CREATE TABLE customer (Customer_Id int AUTO_INCREMENT PRIMARY KEY,GSTIN varchar(
 CREATE TABLE product (Product_Id int AUTO_INCREMENT PRIMARY KEY, Name char(20) UNIQUE NOT NULL, Version char(10), Type char(15), Price decimal, User_Id int, foreign key(User_Id) references user(User_Id)) AUTO_INCREMENT=100;
 
 
-CREATE TABLE invoice (Invoice_Id int AUTO_INCREMENT PRIMARY KEY, Invoice_No int UNIQUE NOT NULL, Invoice_Date varchar(30), Invoice_To varchar(16), foreign key(Invoice_To) references customer(GSTIN))AUTO_INCREMENT = 1;
+CREATE TABLE invoice (Invoice_Id int AUTO_INCREMENT PRIMARY KEY, Invoice_No int UNIQUE NOT NULL, Invoice_Date date, Invoice_To varchar(16), foreign key(Invoice_To) references customer(GSTIN))AUTO_INCREMENT = 1;
 
 
-CREATE TABLE invoice_items (Invoice_Item_Id int AUTO_INCREMENT PRIMARY KEY, Product_Name char(20), Description char(50), Item_Base_Price decimal ,Quantity int, Subtotal decimal, CGST_Price decimal, SGST_Price decimal, IGST_Price decimal, Total_Amount decimal, Invoice_No int, foreign key(Product_Name) references product(Name) ,foreign key(Invoice_No) references invoice(Invoice_No))AUTO_INCREMENT = 10;
+CREATE TABLE invoice_items (Invoice_Item_Id int AUTO_INCREMENT PRIMARY KEY, Product_Name char(20), Description char(50), Item_Base_Price decimal ,Quantity int, Subtotal decimal, CGST_Price decimal, SGST_Price decimal, IGST_Price decimal, Total_Amount decimal, Invoice_No int, foreign key(Product_Name) references product(Name) ,foreign key(Invoice_No) references invoice(Invoice_No) ON DELETE CASCADE)AUTO_INCREMENT = 10;
 

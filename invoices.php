@@ -265,7 +265,7 @@ function getTotal(b_price, quantity, subtotal)
       </div>
       <label style="margin-left: 44%; margin-top: 16px;">Invoice Date :</label>
       <div class = "form-group">
-        <input style="margin-left: 10px; margin-top: 20px;" name = "invoice_date" class = "form-control" value="<?php echo date('d/m/Y h:i a', time()); ?>" />
+        <input style="margin-left: 10px; margin-top: 20px;" name = "invoice_date" class = "form-control" value="<?php echo date('Y-m-d'); ?>" />
       </div>        
     </div>
     <div class="form-inline">
